@@ -27,7 +27,7 @@ jobs:
         with:
           context: "{{defaultContext}}:vtapp/backend"
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/test-backend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/test-backend:latest,${{ secrets.DOCKERHUB_USERNAME }}/test-backend:${{  github.ref_name }}
           
       - name: Build and push Frontend Docker image
         uses: docker/build-push-action@v4
