@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and push Backend Docker image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v1
         with:
           context: "{{defaultContext}}:vtapp/backend"
           push: true
