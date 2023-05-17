@@ -25,10 +25,3 @@ jobs:
           context: "{{defaultContext}}:vtapp/backend"
           push: true
           tags: duongtm3102/test-backend:latest, ${{ github.run_number }}
-      
-      - name: Build and push Frontend Docker image
-        uses: docker/build-push-action@v4
-        with:
-          context: "{{defaultContext}}:vtapp/frontend"
-          push: true
-          tags: duongtm3102/test-frontend:latest, ${{ github.run_number }}
