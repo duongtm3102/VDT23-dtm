@@ -26,4 +26,5 @@
       MONGO_PORT: "{{ MONGO_PORT }}"
       MONGO_USERNAME: "{{ MONGO_USERNAME }}"
       MONGO_PASSWORD: "{{ MONGO_PASSWORD }}"
+      ANSIBLE_HOST: "{{ inventory_hostname }}"
   become: true
