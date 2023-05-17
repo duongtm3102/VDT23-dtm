@@ -27,7 +27,7 @@ def getAllAttendees():
 def getAttendeeById(id):
     id = int(id)
     attendee = currentCollection.find_one({"id": id})
-    if (attendee):
+    if (attendee == None):
         return jsonify({'id':int(attendee['id']), 'name':attendee['name'], 'birthyear':attendee['birthyear'], 'gender':attendee['gender'],
                               'university':attendee['university'], 'major':attendee['major']})
     return jsonify({'message': 'Attendee Not Found'}), 404
