@@ -1,22 +1,30 @@
 ---
-- name: Setup OS environment
-  hosts: all
-  become: true
-  gather_facts: true
-  roles:
-    - common
+# - name: Setup OS environment
+#   hosts: all
+#   become: true
+#   gather_facts: true
+#   roles:
+#     - common
 
-- name: Deploy backend + database
-  hosts: backend
-  become: true
-  gather_facts: true
-  roles:
-    - db
-    - api
 
-- name: Deploy webserver
-  hosts: webserver
+# - name: Deploy database
+#   hosts: vm3
+#   become: true
+#   gather_facts: true
+#   roles:
+#     - db
+
+# - name: Deploy webserver
+#   hosts: webserver
+#   become: true
+#   gather_facts: true
+#   roles:
+#     - api
+#     - web
+
+- name: Deploy nginx LB
+  hosts: vm3
   become: true
   gather_facts: true
   roles:
-    - web
+    - lb
